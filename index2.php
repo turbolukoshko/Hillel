@@ -65,6 +65,19 @@ class theSecondPart{
 		}
 		return false;
 	}
+
+	/*
+	7) Написать свою реализацию следующих функций php: array_diff.
+	*/
+	public function myArray_Diff($arr1, $arr2)
+	{
+		foreach ($arr1 as $value) {
+			if (in_array($value, $arr2) == false) {
+				$diff[] = $value;
+			}
+		}
+		return $diff;
+	}
 }
 
 $obj = new theSecondPart;
@@ -75,3 +88,5 @@ echo '<br>';
 var_dump($obj->myArray_sum([1,2,3,4,5]));
 echo '<br>';
 var_dump($obj->myIn_Array([1,2,3,22, 'foo', 'bar', 'baz'], 'foo'));
+echo '<br>';
+var_dump($obj->myArray_Diff([1,2,3,4,5], [1,2,3]));
