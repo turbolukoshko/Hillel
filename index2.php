@@ -78,6 +78,24 @@ class theSecondPart{
 		}
 		return $diff;
 	}
+
+	/*
+	8) Написать свою реализацию следующих функций php: array_sum, in_array, array_diff , sort.
+	*/
+	public function mySort($a)
+	{
+		$count = count($a);
+		for ($i=0; $i < $count; $i++) { 
+			for ($j=0; $j < $count-1; $j++) { 
+				if ($a[$j] > $a[$j+1]) {
+					$result = $a[$j];
+					$a[$j] = $a[$j+1];
+					$a[$j+1] = $result;
+				}
+			}
+		}
+		return $a;
+	}
 }
 
 $obj = new theSecondPart;
@@ -90,3 +108,5 @@ echo '<br>';
 var_dump($obj->myIn_Array([1,2,3,22, 'foo', 'bar', 'baz'], 'foo'));
 echo '<br>';
 var_dump($obj->myArray_Diff([1,2,3,4,5], [1,2,3]));
+echo '<br>';
+var_dump($obj->mySort([11,21,33,4]));
