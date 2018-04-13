@@ -9,18 +9,17 @@ class theThirdPart
 	Задачи по строкам:
 	10) Написать свою реализацию следующих функций php: strpos.
 	*/
-	public function myFuncStrpos($arr, $val){
-		$count = count($arr);
-		$numStr = str_split($arr);
-
-		for ($i=0; $i < $count; $i++) { 
-			if ($i == $val) {
-				return $val;
-			}
+	public function myStrpos($str, $find) {
+	$split = str_split($str); // Преобразует строку в массив
+	for ($i=0; $i < $split ; $i++) { 
+		if ($split[$i] === $find) {
+			return $i;
 		}
 	}
+}
 }
 
 $obj = new theThirdPart;
 $str = 'abc';
-var_dump($obj->myFuncStrpos($str, 'a'));
+$find = 'b';
+var_dump($obj->myStrpos($str, $find));
